@@ -1,0 +1,14 @@
+instalar requirements: pip install -r requirements.txt
+
+rodar app: flask --app App --debug run
+
+Criando migrate
+    abrir venv
+        cd venv/script/activated.bat
+    voltar até pasta raiz
+
+    set FLASK_APP = App.py
+    flask db init -> Executa apenas uma vez para criar pasta migrations
+
+    flask db migrate
+    flask db upgrade

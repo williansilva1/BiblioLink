@@ -1,0 +1,14 @@
+Flask
+gunicorn
+Flask-Migrate
+Flask-Restful
+Flask-login
+flask_bcrypt
+SQLAlchemy
+Flask-SQLAlchemy
+Flask-JWT-Extended
+Flask-WTF
+requests
+wtforms
+psycopg2
+Flask-psycopg2
