@@ -12,3 +12,4 @@ requests
 wtforms
 psycopg2
 Flask-psycopg2
+bcrypt

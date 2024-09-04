@@ -1,0 +1,26 @@
+1. Introdução:
+    O presente relatório descreve a estrutura de um sistema desenvolvido com base na arquitetura de um projeto Python. 
+    O sistema é voltado para a gestão de clientes, funcionários, livros e vendas, e é organizado em módulos específicos 
+    para facilitar a manutenção e a escalabilidade. 
+
+2. Objetivo:
+    O objetivo deste projeto é desenvolver uma aplicação para gerenciamento de uma livraria, essa aplicação permitirá a 
+    administração de clientes, funcionários, livros e vendas, oferecendo uma interface para cadastro, edição e listagem dessas entidades.
+
+3. Metodologia:
+    A metodologia aplicada no desenvolvimento deste sistema segue os princípios da arquitetura MVC (Model-View-Controller), 
+    onde:
+        Modelos (Models): Responsáveis por definir as entidades do sistema e a interação com o banco de dados.
+        Formulários (Forms): Usados para definir a estrutura dos dados que serão enviados e recebidos pelas interfaces de cadastro e edição.
+        Rotas (Routes): Definem os endpoints da aplicação, associando as requisições HTTP às funções correspondentes.
+        Serviços (Services): Contêm a lógica de negócio e as operações sobre os modelos.
+        Templates: São as interfaces visuais da aplicação, definidas em arquivos HTML.
+
+4. Tecnologia:
+    A aplicação é desenvolvida em Python, utilizando o framework Flask, que é adequado para a criação de aplicações web de pequeno e médio porte. 
+    Além disso, as seguintes tecnologias e ferramentas são usadas:
+        HTML: Para criação das páginas web.
+        CSS e Bootstrap: Para estilização das páginas.
+        SQLAlchemy: Para ORM (mapeamento objeto-relacional) e interação com o banco de dados.
+        Jinja2: Motor de template usado para gerar o HTML dinâmico a partir dos dados fornecidos pelas rotas.
+
