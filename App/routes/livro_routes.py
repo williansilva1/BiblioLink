@@ -9,6 +9,25 @@ def page_livros():
     livros = livro_services.listar_livros
     return render_template("listar_livros.html", livros=livros)
 
+@app.route("/livros/cadastrar/", methods=['GET', 'POST'])
+def page_livro_cadastrar():
+    form = cadastro_livro_form.CadastroLivroForm()
+    if form.validate_on_submit():
+        livro_cadastrado = livro.Livro(
+            titulo=form.titulo.data,
+            autor=form.autor.data,
+            isbn=form.isbn.data,
+            preco=form.preco.data,
+            estoque=form.estoque.data
+        )
+        if livro_services.cadastrar_livro(livro_cadastrado):
+            return redirect(url_for('page_livros'))
+    if form.errors != {}:
+        for field, err in form.errors.items():
+            print(f"Error in field {field}: {err}")
+
+    return render_template("cadastro_livro.html", form=form)
+
     #if form validar
     #monta entidade de livro
     #chama o serviço de cadastro passando entidade
@@ -40,21 +59,3 @@ def page_livros():
                     </div>
                   </form>
     """
-@app.route("/livros/cadastrar/", methods=['GET', 'POST'])
-def page_livro_cadastrar():
-    form = cadastro_livro_form.CadastroLivroForm()
-    if form.validate_on_submit():
-        livro_cadastrado = livro.Livro(
-            titulo=form.titulo.data,
-            autor=form.autor.data,
-            isbn=form.isbn.data,
-            preco=form.preco.data,
-            estoque=form.estoque.data
-        )
-        if livro_services.cadastrar_livro(livro_cadastrado):
-            return redirect(url_for('page_livros'))
-    if form.errors != {}:
-        for field, err in form.errors.items():
-            print(f"Error in field {field}: {err}")
-
-    return render_template("cadastro_livro.html", form=form)

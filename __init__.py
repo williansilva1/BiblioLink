@@ -19,6 +19,6 @@ login_manager.login_view = "page_login"
 login_manager.login_message = "Acesso negado! Por favor se autentique e tente novamente."
 login_manager.login_message_category = "danger"
 
-from .models import livro_model #, venda_model, cliente_model, funcionario_model
+from .models import cliente_model, funcionario_model,livro_model,venda_model
 
-from .routes import home_routes, livro_routes
+from .routes import home_routes, livro_routes,  venda_routes, cliente_routes, funcionario_routes
