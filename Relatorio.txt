@@ -10,10 +10,13 @@
 3. Metodologia:
     A metodologia aplicada no desenvolvimento deste sistema segue os princípios da arquitetura MVC (Model-View-Controller), 
     onde:
+    M-> Models
         Modelos (Models): Responsáveis por definir as entidades do sistema e a interação com o banco de dados.
+    C-> Controllers
+        Serviços (Services): Contêm a lógica de negócio e as operações sobre os modelos.
+    V-> Views
         Formulários (Forms): Usados para definir a estrutura dos dados que serão enviados e recebidos pelas interfaces de cadastro e edição.
         Rotas (Routes): Definem os endpoints da aplicação, associando as requisições HTTP às funções correspondentes.
-        Serviços (Services): Contêm a lógica de negócio e as operações sobre os modelos.
         Templates: São as interfaces visuais da aplicação, definidas em arquivos HTML.
 
 4. Tecnologia:
