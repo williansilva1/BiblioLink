@@ -22,7 +22,7 @@ login_manager.login_message = "Acesso negado! Por favor se autentique e tente no
 login_manager.login_message_category = "danger"
 
 #Biblioteca do Python para importações
-modules = ('cliente', 'funcionario', 'livro', 'home')
+modules = ('cliente', 'funcionario', 'livro', 'home', 'venda')
 for module_name in modules:
     module = import_module('App.{}.routes'.format(module_name))
     app.register_blueprint(module.blueprint)

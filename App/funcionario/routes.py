@@ -48,11 +48,11 @@ def logout():
 
 @blueprint.route("/funcionario/", methods=['GET'])
 def page_funcionario():
-    funcionarios = listar_funcionarios
-    return render_template("accounts/listar.html", funcionarios=funcionarios)
+    funcionarios = listar_funcionarios()
+    return render_template("funcionario/listar.html", funcionarios=funcionarios)
 
 @blueprint.route("/funcionario/cadastrar/", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def page_funcionario_cadastrar():
     form = CadastroFuncionarioForm()
     if form.validate_on_submit():
@@ -64,17 +64,17 @@ def page_funcionario_cadastrar():
             nivel = 5
         )
         if cadastrar_funcionario(funcionario_cadastro):
-            return redirect(url_for('funcionario_blueprint.page_funcionario'))
+            return redirect(url_for('funcionario_blueprint.page_funcionario_cadastrar'))
     if form.errors != {}:
         for field, err in form.errors.items():
             print(f"Error in field {field}: {err}")
             flash(f"Erro ao atualizar cadastro {field}: {err}", category='danger')
 
-    return render_template("cadastro_funcionario.html", form=form)
+    return render_template("funcionario/cadastrar.html", form=form)
 
 
 @blueprint.route("/funcionario/editar/<int:id>/", methods=['POST', 'GET'])
-@login_required
+#@login_required
 def page_funcionarios_editar(id):
     form = EditarFuncionarioForm()
     funcionario = buscar_funcionario_id(id)
@@ -86,4 +86,4 @@ def page_funcionarios_editar(id):
             print(f"Error in field {field}: {err}")
             flash(f"Erro ao atualizar cadastro {field}: {err}", category='danger')
 
-    return render_template("editar_funcionario.html", form=form, funcionario=funcionario)
+    return render_template("funcionario/editar.html", form=form, funcionario=funcionario)

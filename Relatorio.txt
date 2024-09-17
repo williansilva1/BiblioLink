@@ -18,6 +18,8 @@
         Formulários (Forms): Usados para definir a estrutura dos dados que serão enviados e recebidos pelas interfaces de cadastro e edição.
         Rotas (Routes): Definem os endpoints da aplicação, associando as requisições HTTP às funções correspondentes.
         Templates: São as interfaces visuais da aplicação, definidas em arquivos HTML.
+    
+    Alterações realizadas: Foi reajustado a metodologia do projeto a fim de facilitar o entendimento e tambem foi alterado a base de dados para SqLite.
 
 4. Tecnologia:
     A aplicação é desenvolvida em Python, utilizando o framework Flask, que é adequado para a criação de aplicações web de pequeno e médio porte. 

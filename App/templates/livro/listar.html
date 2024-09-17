@@ -1,0 +1,128 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Livros {% endblock title %}
+
+{% block content %}
+
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Livros</h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item">Cadastros</li>
+                <li class="breadcrumb-item active" aria-current="page">Livros</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="col-lg-6 col-5 text-right">
+            <a href="{{url_for('livro_blueprint.page_livros_cadastrar')}}" class="btn btn-sm btn-neutral">Cadastrar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header border-0">
+            <h3 class="mb-0">Livros</h3>
+          </div>
+          <!-- Light table -->
+           
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" class="sort" data-sort="name">Título</th>
+                  <th scope="col" class="sort" data-sort="name">Autor</th>
+                  <th scope="col" class="sort" data-sort="budget">Preço</th>
+                  <th scope="col" class="sort" data-sort="budget">Estoque</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                {% if livros %}
+                {% for livro in livros %}
+                <tr>
+                  <th>
+                    <span class="name mb-0 text-sm">{{livro.id}} - {{ livro.titulo }}</span>
+                  </th>
+                  <td>
+                    <span class="name mb-0 text-sm">{{livro.autor}}</span>
+                  </td>
+                  <td class="budget">
+                    R$ {{livro.preco}}
+                  </td>
+                  <td>
+                    <span class="name mb-0 text-sm">{{livro.estoque}}</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="dropdown">
+                      <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        <a class="dropdown-item" href="{{url_for('livro_blueprint.page_livros_consulta', id=livro.id)}}">Consultar</a>
+                        <a class="dropdown-item" href="{{url_for('livro_blueprint.page_livros_editar', id=livro.id)}}">Alterar</a>
+                        <button type="button" class="dropdown-item" data-toggle="modal" data-target="#modal-excluir{{livro.id}}">Excluir</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!--Modal exclusão-->
+                <div class="modal fade" id="modal-excluir{{livro.id}}" tabindex="-1" role="dialog" aria-labelledby="modal-excluir{{livro.id}}" aria-hidden="true">
+                  <div class="modal-dialog modal-danger modal-dialog-centered modal-10" role="document">
+                      <div class="modal-content bg-gradient-danger">
+                          <div class="modal-header">
+                              <h6 class="modal-title" id="modal-title-notification">Confirmação de exclusão</h6>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                              </button>
+                          </div>
+                          
+                          <div class="modal-body">
+                            
+                              <div class="py-3 text-center">
+                                  <i class="ni ni-bell-55 ni-3x"></i>
+                                  <h4 class="heading mt-4">You should read this!</h4>
+                                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                              </div>
+                              
+                          </div>
+                          
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-white">Ok, Got it</button>
+                              <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button> 
+                          </div>
+                          
+                      </div>
+                  </div>
+                {% endfor %}
+                {% else %}
+                  <tr>
+                    <td colspan="6" class="text-center">Sem livros cadastrados</td>
+                  </tr>
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}

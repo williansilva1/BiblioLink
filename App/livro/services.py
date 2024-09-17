@@ -14,7 +14,7 @@ def cadastrar_livro(livro):
     return True
 
 def listar_livro_by_id(id):
-    return Livro.query.filter_by(id).first()
+    return Livro.query.filter_by(id=id).first()
 
 def editar_livro(id, livro):
     livro_db = listar_livro_by_id(id)
