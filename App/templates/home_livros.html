@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="container">
+  <!-- Content here -->
+  <form method="POST">
+    
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BIBLIOLINK</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    </head>
+    <body>
+        <ul>
+            <li><a href={{url_for('alugar_livro')}}>Alugar Livro</a></li>
+            <li><a href={{url_for('cadastro_cliente')}}>Cadastro de Cliente</a></li>
+            <li><a href={{url_for('cadastro_funcionario')}}>Cadastro de Funcionario</a></li>
+        </ul>
+    </body>
+
+{% endblock %}

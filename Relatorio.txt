@@ -10,6 +10,7 @@
 3. Metodologia:
     A metodologia aplicada no desenvolvimento deste sistema segue os princípios da arquitetura MVC (Model-View-Controller), 
     onde:
+<<<<<<< HEAD
     M-> Models
         Modelos (Models): Responsáveis por definir as entidades do sistema e a interação com o banco de dados.
     C-> Controllers
@@ -20,6 +21,13 @@
         Templates: São as interfaces visuais da aplicação, definidas em arquivos HTML.
     
     Alterações realizadas: Foi reajustado a metodologia do projeto a fim de facilitar o entendimento e tambem foi alterado a base de dados para SqLite.
+=======
+        Modelos (Models): Responsáveis por definir as entidades do sistema e a interação com o banco de dados.
+        Formulários (Forms): Usados para definir a estrutura dos dados que serão enviados e recebidos pelas interfaces de cadastro e edição.
+        Rotas (Routes): Definem os endpoints da aplicação, associando as requisições HTTP às funções correspondentes.
+        Serviços (Services): Contêm a lógica de negócio e as operações sobre os modelos.
+        Templates: São as interfaces visuais da aplicação, definidas em arquivos HTML.
+>>>>>>> 6676ea01abfb597f16dbdf7feb3deb652a07611c
 
 4. Tecnologia:
     A aplicação é desenvolvida em Python, utilizando o framework Flask, que é adequado para a criação de aplicações web de pequeno e médio porte. 
