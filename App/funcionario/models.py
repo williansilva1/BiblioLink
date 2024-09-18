@@ -1,4 +1,4 @@
-from App import db, bcrypt, login_manager
+from App import db, login_manager
 from flask_login import UserMixin
 
 @login_manager.user_loader
@@ -16,12 +16,6 @@ class Funcionario(db.Model, UserMixin):
     setor=db.Column(db.String(20), nullable=False)
     login=db.Column(db.String(20), nullable=False)
     senha=db.Column(db.String(255), nullable=False)
-    
-    def encriptar_senha(self):
-        self.senha = bcrypt.generate_password_hash(self.senha).decode('utf-8')
-
-    def validar_senha(self, senha):
-        return bcrypt.check_password_hash(self.senha, senha)
     
     def __repr__(self):
         return f'<Funcionario {self.nome}>' #str(self.id) + " - " + self.nome

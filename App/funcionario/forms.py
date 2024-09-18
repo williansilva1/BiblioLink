@@ -12,7 +12,7 @@ class CadastroFuncionarioForm(FlaskForm):
     setor = StringField(label='Setor', validators=[DataRequired()])
     login = StringField(label='Usuário', validators=[DataRequired()])
     senha = PasswordField(label='Senha', validators=[DataRequired()])    
-    submit = SubmitField(label='Entrar')
+    submit = SubmitField(label='Cadastrar')
     
 class EditarFuncionarioForm(FlaskForm):
     #Dados cadastrais

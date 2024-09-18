@@ -27,8 +27,25 @@ def editar_livro(id, livro):
     return True
 
 def remover_livro(id):
-    db.session.delete(listar_livro_by_id(id))
+    livro = Livro.query.filter_by(id=id).first()
+    db.session.delete(livro)
+    db.session.commit()
     return True
 
 def listar_livros():
     return Livro.query.order_by(Livro.id).all()
+
+def listar_livros_estoque():
+    livros = Livro.query.filter(Livro.estoque>0).order_by(Livro.id).all()
+    return livros
+
+
+    #livros = Livro.query.order_by(Livro.id).all()
+    #livros_estoque=[]
+    #for livro in livros:
+    #    print(livro.estoque)
+    #    if (livro.estoque > 0):
+    #        print(livro.titulo)
+    #        livros_estoque.append(livro)
+    #return livros_estoque
+    

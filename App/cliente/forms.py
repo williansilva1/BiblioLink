@@ -8,15 +8,11 @@ class CadastroClienteForm(FlaskForm):
     cpf=StringField(label='Cpf', validators=[DataRequired()])
     endereco=StringField(label='Endereco', validators=[DataRequired()])
     email=StringField(label='Email', validators=[DataRequired()])
-    login = StringField(label='Usuário', validators=[DataRequired()])
-    senha = PasswordField(label='Senha', validators=[DataRequired()])
-    submit = SubmitField(label='Entrar')
+    submit = SubmitField(label='Cadastrar')
     
 
 class EditarClienteForm(FlaskForm):
     nome = StringField(label='Nome', validators=[Length(min=5, max=40), DataRequired()])
     endereco=StringField(label='Endereco', validators=[DataRequired()])
     email=StringField(label='Email', validators=[DataRequired()])
-   
-    
     submit = SubmitField(label="Salvar")

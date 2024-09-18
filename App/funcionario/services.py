@@ -8,8 +8,6 @@ def cadastrar_funcionario(funcionario):
         salario=funcionario.salario,
         cargo=funcionario.cargo,
         setor=funcionario.setor,
-        endereco=funcionario.endereco,
-        email=funcionario.email,
         login=funcionario.login,
         senha=funcionario.senha
     )
@@ -26,30 +24,29 @@ def buscar_funcionario_cpf(cpf):
     return funcionario_bd
 
 def buscar_funcionario_login(login):
-    funcionario_bd=Funcionario.query.filter_by(login=login).first
+    funcionario_bd=Funcionario.query.filter_by(login=login).first()
     return funcionario_bd
 
 def buscar_funcionario_id(id):
     funcionario_bd = Funcionario.query.filter_by(id=id).first()
     return funcionario_bd
     
-def editar_funcionario(cpf, funcionario):
-    funcionario_db = buscar_funcionario_cpf(cpf)
+def editar_funcionario(id, funcionario):
+    funcionario_db = buscar_funcionario_id(id)
     funcionario_db.nome=funcionario.nome
     funcionario_db.salario=funcionario.salario
     funcionario_db.cargo=funcionario.cargo
     funcionario_db.setor=funcionario.setor
-    funcionario_db.endereco=funcionario.endereco
-    funcionario_db.email=funcionario.email
     funcionario_db.login=funcionario.login
     funcionario_db.senha=funcionario.senha
     db.session.commit()
     return True
 
-def remover_funcionario(cpf):
-    funcionario_bd = buscar_funcionario_cpf(cpf)
-    db.session.delete(funcionario_bd)
+def remover_funcionario(id):
+    funcionario = Funcionario.query.filter_by(id=id).first()
+    db.session.delete(funcionario)
     db.session.commit()
+    return True
     
 
 

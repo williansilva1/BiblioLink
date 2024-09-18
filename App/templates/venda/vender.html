@@ -1,6 +1,6 @@
 {% extends 'layouts/base.html' %}
 
-{% block title %} Livros - Consulta {% endblock title %}
+{% block title %} Livros - Venda {% endblock title %}
 
 {% block content %}
 
@@ -9,12 +9,12 @@
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-6 col-7">
-            <h6 class="h2 text-white d-inline-block mb-0">Livros</h6>
+            <h6 class="h2 text-white d-inline-block mb-0">Venda</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                 <li class="breadcrumb-item"><a href="{{url_for('livro_blueprint.page_livros')}}">Livros</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Consultar</li>
+                <li class="breadcrumb-item active" aria-current="page">Venda</li>
               </ol>
             </nav>
           </div>
@@ -30,7 +30,7 @@
         <div class="card">
           <!-- Card header -->
           <div class="card-header border-0">
-            <h3 class="mb-0">Cadastrar livro</h3>
+            <h3 class="mb-0">Vender livro</h3>
           </div>
           <!-- Formulário de cadastro de livro-->
           <div class="card-body">

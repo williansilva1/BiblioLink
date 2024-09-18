@@ -1,0 +1,94 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Funcionario - Consulta {% endblock title %}
+
+{% block content %}
+
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Funcionarios</h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="{{url_for('funcionario_blueprint.page_funcionario')}}">Funcionarios</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Consultar</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header border-0">
+            <h3 class="mb-0">Cadastrar livro</h3>
+          </div>
+          <!-- Formulário de cadastro de livro-->
+          <div class="card-body">
+            
+            <h6 class="heading-small text-muted mb-4">Dados cadastrais</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-Titulo">Nome</label>
+                    <input type="text" id="input-nome" class="form-control" value="{{funcionario.nome}}" readonly>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-Titulo">CPF</label>
+                    <input type="text" id="input-cpf" class="form-control" value="{{funcionario.cpf}}" readonly>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-Titulo">Salario</label>
+                    <input type="text" id="input-salario" class="form-control" value="{{funcionario.salario}}" readonly>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-Titulo">Cargo</label>
+                    <input type="text" id="input-cargo" class="form-control" value="{{funcionario.cargo}}" readonly>
+                  </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-Titulo">Setor</label>
+                  <input type="text" id="input-setor" class="form-control" value="{{funcionario.setor}}" readonly>
+                </div>
+            </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Operacionais -->
+            <h6 class="heading-small text-muted mb-4">Dados de acesso</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-Titulo">LOGIN</label>
+                    <input type="text" id="input-login" class="form-control" value="{{funcionario.login}}" readonly>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}

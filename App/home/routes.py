@@ -1,5 +1,5 @@
 from App.home import blueprint
-from flask import render_template, request
+from flask import render_template, request, redirect, url_for
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 
@@ -8,7 +8,7 @@ from jinja2 import TemplateNotFound
 @login_required
 def index():
 
-    return render_template('home/index.html', segment='index')
+    return redirect(url_for('venda_blueprint.page_venda'))
 
 
 @blueprint.route('/<template>')

@@ -13,7 +13,7 @@
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                <li class="breadcrumb-item"><a href="{{url_for('funcionario_blueprint.page_funcionario')}}">Cliente</a></li>
+                <li class="breadcrumb-item"><a href="{{url_for('cliente_blueprint.page_cliente')}}">Cliente</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Cadastrar</li>
               </ol>
             </nav>
@@ -51,8 +51,18 @@
                       {{ form.cpf(class="form-control", placeholder="Digite o CPF") }}
                     </div>
                   </div>
-                  
-                  
+                  <div class="col-lg-3">
+                    <div class="form-group">
+                      {{ form.endereco.label(class="form-control-label") }}
+                      {{ form.endereco(class="form-control", placeholder="Digite o endereço") }}
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="form-group">
+                      {{ form.email.label(class="form-control-label") }}
+                      {{ form.email(class="form-control", placeholder="Digite o e-mail") }}
+                    </div>
+                  </div>
                 </div>
               </div>
               <hr class="my-4" />
